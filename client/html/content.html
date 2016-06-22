@@ -1,0 +1,25 @@
+<template name="content">
+    <h1>Content</h1>
+    <div class="row">
+        <br>
+        <div class="col-md-2 col-sm-3 text-center">
+            {{#if hasPicture author}}
+            <img alt="User picture" src="{{getPicture author}}" style="width:100px;height:100px" class="img-circle">
+            {{/if}}
+        </div>
+
+        <div class="col-md-10 col-sm-9">
+            <h3 style="word-wrap:break-word">{{title}}</h3>
+            <h5 style="word-wrap:break-word">{{content}}</h5>
+            <div class="row">
+                <div class="col-xs-9">
+                    <h4><span class="label label-default">By : {{author}}</span></h4>
+                    <h4><small style="font-family:courier,'new courier';" class="text-muted">Created At : {{formatDate createdAt}} • Updated At : {{formatDate updatedAt}} </small>
+                    </h4>
+                </div>
+                <div class="col-xs-3"></div>
+            </div>
+            <br><br>
+        </div>
+    </div>
+</template>

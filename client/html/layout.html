@@ -1,0 +1,49 @@
+<template name="layout">
+    <header class="navbar navbar-bright navbar-fixed-top" role="banner">
+        <div class="container">
+            <nav class="collapse navbar-collapse" role="navigation">
+                <ul class="navbar-brand">
+                    {{> loginButtons }}
+                </ul>
+                <a href="/" class="navbar-brand">Blog</a>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="/posts">Posts</a>
+                    </li>
+                    <li>
+                        <a href="/about">About</a>
+                    </li>
+
+                    <li>
+                        <a href="/contact">Contact</a>
+                    </li>
+                    {{#if currentUser}}
+                    <li>
+                        <a href="/addPost">Add Post</a>
+                    </li>
+                    {{#if isAdmin}}
+                    <li>
+                    <a href="/messages">Messages</a>
+                </li>
+                    {{/if}}
+                    <li>
+                        <a href="/modifyProfil">Modify Profil</a>
+                    </li>
+
+                    {{/if}}
+                </ul>
+
+
+
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <div class="container">
+        {{> yield }}
+    </div>
+
+</template>
